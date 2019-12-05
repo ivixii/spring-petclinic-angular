@@ -35,11 +35,21 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { OfertsComponent } from './oferts/oferts.component';
+import { OfertsAddComponent } from './oferts/oferts-add/oferts-add.component';
+import { OfertsDetailComponent } from './oferts/oferts-detail/oferts-detail.component';
+import { OfertsEditComponent } from './oferts/oferts-edit/oferts-edit.component';
+import { OfertsListComponent } from './oferts/oferts-list/oferts-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    OfertsComponent,
+    OfertsAddComponent,
+    OfertsDetailComponent,
+    OfertsEditComponent,
+    OfertsListComponent,
   ],
   imports: [
     BrowserModule,
