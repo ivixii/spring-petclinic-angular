@@ -31,7 +31,7 @@ import {Offer} from '../offer';
   templateUrl: './offer-detail.component.html',
   styleUrls: ['./offer-detail.component.css']
 })
-export class offerDetailComponent implements OnInit {
+export class OfferDetailComponent implements OnInit {
   errorMessage: string;
   offer:Offer;
 

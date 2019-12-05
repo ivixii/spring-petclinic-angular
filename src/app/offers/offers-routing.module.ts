@@ -21,32 +21,25 @@
  */
 
 import {NgModule} from '@angular/core';
-import {OfferService} from './offer.service';
-import {OfferListComponent} from './offer-list/offer-list.component';
+import {RouterModule, Routes} from '@angular/router';
 import {OfferDetailComponent} from './offer-detail/offer-detail.component';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {OfferAddComponent} from './offer-add/offer-add.component';
+import {OfferListComponent} from './offer-list/offer-list.component';
 import {OfferEditComponent} from './offer-edit/offer-edit.component';
-import {OffersRoutingModule} from './offers-routing.module';
-import {PetsModule} from '../pets/pets.module';
+import {OfferAddComponent} from './offer-add/offer-add.component';
+import {PetAddComponent} from '../pets/pet-add/pet-add.component';
+
+const offerRoutes: Routes = [
+  {path: 'offers', component: OfferListComponent},
+  {path: 'offers/add', component: OfferAddComponent},
+  {path: 'offers/:id', component: OfferDetailComponent},
+  {path: 'offers/:id/edit', component: OfferEditComponent},
+  {path: 'offers/:id/pets/add', component: PetAddComponent}
+];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    OffersRoutingModule,
-    PetsModule
-  ],
-  declarations: [
-    OfferListComponent,
-    OfferDetailComponent,
-    OfferEditComponent,
-    OfferAddComponent
-  ],
-  providers: [OfferService]
-
+  imports: [RouterModule.forChild(offerRoutes)],
+  exports: [RouterModule]
 })
 
-export class OffersModule {
+export class OffersRoutingModule {
 }
