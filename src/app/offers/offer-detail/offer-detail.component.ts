@@ -21,9 +21,9 @@
  */
 
 import {Component, OnInit} from '@angular/core';
-import {offerService} from '../offer.service';
+import {OfferService} from '../offer.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {offer} from '../offer';
+import {Offer} from '../offer';
 
 
 @Component({
@@ -33,15 +33,15 @@ import {offer} from '../offer';
 })
 export class offerDetailComponent implements OnInit {
   errorMessage: string;
-  offer: offer;
+  offer:Offer;
 
-  constructor(private route: ActivatedRoute, private router: Router, private offerService: offerService) {
-    this.offer = {} as offer;
+  constructor(private route: ActivatedRoute, private router: Router, private offerService: OfferService) {
+    this.offer = {} as Offer;
   }
 
   ngOnInit() {
     const offerId = this.route.snapshot.params.id;
-    this.offerService.getofferById(offerId).subscribe(
+    this.offerService.getOfferById(offerId).subscribe(
       offer => this.offer = offer,
       error => this.errorMessage = error as any);
   }
@@ -54,7 +54,7 @@ export class offerDetailComponent implements OnInit {
     this.router.navigate(['/offers', this.offer.id, 'edit']);
   }
 
-  addPet(offer: offer) {
+  addPet(offer: Offer) {
     this.router.navigate(['/offers', offer.id, 'pets', 'add']);
   }
 

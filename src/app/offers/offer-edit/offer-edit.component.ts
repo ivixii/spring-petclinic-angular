@@ -18,7 +18,7 @@ export class OfferEditComponent implements OnInit {
 
   ngOnInit() {
 
-    const ownerId = this.route.snapshot.params.id;
+    const offerId = this.route.snapshot.params.id;
     this.offerService.getOfferById(offerId).subscribe(
       offer => this.offer = offer,
       error => this.errorMessage = error as any);
