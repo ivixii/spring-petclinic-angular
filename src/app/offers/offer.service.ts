@@ -9,7 +9,7 @@ import {HandleError, HttpErrorHandler} from '../error.service';
 
 
 @Injectable()
-export class OwnerService {
+export class OfferService {
 
 
   entityUrl = environment.REST_API_URL + 'offers';
