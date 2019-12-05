@@ -28,8 +28,8 @@ export class OfferService {
       );
   }
 
-  getOfferById(offernerId: string): Observable<Offer> {
-    return this.http.get<Offer>(this.entityUrl + '/' + offernerId)
+  getOfferById(offerId: string): Observable<Offer> {
+    return this.http.get<Offer>(this.entityUrl + '/' + offerId)
       .pipe(
           catchError(this.handlerError('getOfferById', {} as Offer))
       );
@@ -42,17 +42,17 @@ export class OfferService {
       );
   }
 
-  updateOffer(offernerId: string, offer: Offer): Observable<{}> {
-    return this.http.put<Offer>(this.entityUrl + '/' + offernerId, offer)
+  updateOffer(offerId: string, offer: Offer): Observable<{}> {
+    return this.http.put<Offer>(this.entityUrl + '/' + offerId, offer)
       .pipe(
         catchError(this.handlerError('updateOffer', offer))
       );
   }
 
-  deleteOffer(offernerId: string): Observable<{}> {
-    return this.http.delete<Offer>(this.entityUrl + '/' + offernerId)
+  deleteOffer(offerId: string): Observable<{}> {
+    return this.http.delete<Offer>(this.entityUrl + '/' + offerId)
       .pipe(
-         catchError(this.handlerError('deleteOffer', [offernerId]))
+         catchError(this.handlerError('deleteOffer', [offerId]))
       )
   }
 }
