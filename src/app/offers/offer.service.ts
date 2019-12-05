@@ -1,3 +1,4 @@
+
 import {Injectable} from '@angular/core';
 import {Offer} from './offer';
 import {Observable} from 'rxjs';
@@ -10,11 +11,13 @@ import {HandleError, HttpErrorHandler} from '../error.service';
 @Injectable()
 export class OwnerService {
 
+
   entityUrl = environment.REST_API_URL + 'offers';
 
   private readonly handlerError: HandleError;
 
   constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) {
+
     this.handlerError = httpErrorHandler.createHandleError('OwnerService');
   }
 
@@ -50,8 +53,6 @@ export class OwnerService {
     return this.http.delete<Offer>(this.entityUrl + '/' + ownerId)
       .pipe(
          catchError(this.handlerError('deleteOwner', [ownerId]))
-      );
+      )
   }
-
-
 }
