@@ -1,6 +1,21 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
-import { OfferAddComponent } from './offer-add.component';
+import {OfferAddComponent} from './offer-add.component';
+import {FormsModule} from '@angular/forms';
+import {Router} from '@angular/router';
+import {OfferService} from '../offer.service';
+import {RouterTestingModule} from '@angular/router/testing';
+import {RouterStub} from '../../testing/router-stubs';
+import {Offer} from '../offer';
+import {Observable, of} from 'rxjs';
+
+class OwnserServiceStub {
+
+  addOffer(offer: Offer): Observable<Offer> {
+    return of(offer);
+  }
+}
 
 describe('OfferAddComponent', () => {
   let component: OfferAddComponent;
@@ -8,9 +23,15 @@ describe('OfferAddComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OfferAddComponent ]
+      declarations: [OfferAddComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
+      imports: [FormsModule, RouterTestingModule],
+      providers: [
+        {provide: OfferService, useClass: OwnserServiceStub},
+        {provide: Router, useClass: RouterStub}
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +40,7 @@ describe('OfferAddComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create OfferAddComponent', () => {
     expect(component).toBeTruthy();
   });
 });
