@@ -7,7 +7,7 @@
         <tr>
           <th>Titulo</th>
           <th>Detalle</th>
-          <th>Descuento/th>
+          <th>Descuento</th>
           <th>Fecha de Caducidad</th>
         </tr>
         </thead>
@@ -15,20 +15,18 @@
         <tbody>
         <tr *ngFor="let offer of offers">
           <td class="offerFullName"><a routerLink="/offers/{{offer.id}}" routerLinkActive="active"
-                                       (click)="onSelect(offer)">{{ offer.firstName }} {{ offer.lastName }}</a></td>
-          <td>{{ offer.address }}</td>
-          <td>{{ offer.city }}</td>
-          <td>{{ offer.telephone }}</td>
+                                       (click)="onSelect(offer)">{{ offer.title }} {{ offer.description }}</a></td>
+          <td>{{ offer.discount }}</td>
+          <td>{{ offer.discount }}</td>
+          <td>{{ offer.discount }}</td>
           <td>
-        <tr *ngFor="let pet of offer.pets">
-          {{ pet.name }}
-        </tr>
+        
         </td>
         </tr>
         </tbody>
       </table>
       <div>
-        <button class="btn btn-default" (click)="addOffer()">Add Owner</button>
+        <button class="btn btn-default" (click)="addOffer()">Add Offer</button>
       </div>
     </div>
   </div>

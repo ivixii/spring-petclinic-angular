@@ -41,8 +41,8 @@ class OwnserServiceStub {
 }
 
 describe('OwnerEditComponent', () => {
-  let component: OwnerEditComponent;
-  let fixture: ComponentFixture<OwnerEditComponent>;
+  let component: OfferEditComponent;
+  let fixture: ComponentFixture<OfferEditComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
