@@ -18,41 +18,41 @@ export class OfferService {
 
   constructor(private http: HttpClient, private httpErrorHandler: HttpErrorHandler) {
 
-    this.handlerError = httpErrorHandler.createHandleError('OwnerService');
+    this.handlerError = httpErrorHandler.createHandleError('OfferService');
   }
 
-  getOwners(): Observable<Offer[]> {
+  getOffers(): Observable<Offer[]> {
     return this.http.get<Offer[]>(this.entityUrl)
       .pipe(
-        catchError(this.handlerError('getOwners', []))
+        catchError(this.handlerError('getOffers', []))
       );
   }
 
-  getOwnerById(ownerId: string): Observable<Offer> {
-    return this.http.get<Offer>(this.entityUrl + '/' + ownerId)
+  getOfferById(offernerId: string): Observable<Offer> {
+    return this.http.get<Offer>(this.entityUrl + '/' + offernerId)
       .pipe(
-          catchError(this.handlerError('getOwnerById', {} as Offer))
+          catchError(this.handlerError('getOfferById', {} as Offer))
       );
   }
 
-  addOwner(offer: Offer): Observable<Offer> {
+  addOffer(offer: Offer): Observable<Offer> {
     return this.http.post<Offer>(this.entityUrl, offer)
       .pipe(
-        catchError(this.handlerError('addOwner', offer))
+        catchError(this.handlerError('addOffer', offer))
       );
   }
 
-  updateOwner(ownerId: string, offer: Offer): Observable<{}> {
-    return this.http.put<Offer>(this.entityUrl + '/' + ownerId, offer)
+  updateOffer(offernerId: string, offer: Offer): Observable<{}> {
+    return this.http.put<Offer>(this.entityUrl + '/' + offernerId, offer)
       .pipe(
-        catchError(this.handlerError('updateOwner', offer))
+        catchError(this.handlerError('updateOffer', offer))
       );
   }
 
-  deleteOwner(ownerId: string): Observable<{}> {
-    return this.http.delete<Offer>(this.entityUrl + '/' + ownerId)
+  deleteOffer(offernerId: string): Observable<{}> {
+    return this.http.delete<Offer>(this.entityUrl + '/' + offernerId)
       .pipe(
-         catchError(this.handlerError('deleteOwner', [ownerId]))
+         catchError(this.handlerError('deleteOffer', [offernerId]))
       )
   }
 }
