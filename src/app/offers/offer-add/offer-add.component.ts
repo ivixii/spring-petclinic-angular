@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   templateUrl: './offer-add.component.html',
   styleUrls: ['./offer-add.component.css']
 })
-export class OwnerAddComponent implements OnInit {
+export class OfferAddComponent implements OnInit {
 
   offer: Offer;
   errorMessage: string;
