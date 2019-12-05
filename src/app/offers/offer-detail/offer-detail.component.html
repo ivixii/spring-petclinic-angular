@@ -41,20 +41,16 @@
         </tr>
       </table>
   
-      <button class="btn btn-default" (click)="gotoOffersList()">< Back</button>
+      <button class="btn btn-default" (click)="gotoOffersList()">Back</button>
       <button class="btn btn-default" (click)="editOffer()">Edit Offer</button>
       <button class="btn btn-default" (click)="addPet(offer)">Add New Pet</button>
   
       <br/>
       <br/>
       <br/>
-      <h2>Pets and Visits</h2>
+      
   
-      <table class="table table-striped">
-        <tr>
-          <app-pet-list *ngFor="let pet of offer.pets" [pet]="pet"></app-pet-list>
-        </tr>
-      </table>
+      
     </div>
   </div>
   

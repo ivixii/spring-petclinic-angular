@@ -8,7 +8,7 @@
         <input type="text" hidden="true" class="form-control" id="id" [(ngModel)]="offer.id" name="id"/>
       </div>
       <div class="form-group has-feedback" [class.has-success]="firstName.dirty && firstName.valid" [class.has-error]="firstName.dirty &&  !firstName.valid">
-        <label for="firstName" class="col-sm-2 control-label">First Name</label>
+        <label for="firstName" class="col-sm-2 control-label">Title</label>
         <div class="col-sm-10">
           <input type="text" class="form-control" id="firstName" [(ngModel)]="offer.firstName" minlength="2" required name="firstName" #firstName="ngModel"/>
           <span class="glyphicon form-control-feedback" [class.glyphicon-ok]="firstName.valid" [class.glyphicon-remove]="!firstName.valid" aria-hidden="true"></span>
