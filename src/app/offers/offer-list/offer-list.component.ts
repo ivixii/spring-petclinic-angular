@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {OfferService} from '../offer.service';
-import {Offer} from '../offer';
-import {Router} from '@angular/router';
+import { OfferService } from '../offer.service';
+import { Offer } from '../offer';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offer-list',
@@ -12,7 +12,7 @@ export class OfferListComponent implements OnInit {
   errorMessage: string;
   offers: Offer[];
   constructor(private router: Router, private offerService: OfferService) {
-   }
+  }
 
   ngOnInit() {
     this.offerService.getOffers().subscribe(
@@ -20,11 +20,13 @@ export class OfferListComponent implements OnInit {
       error => this.errorMessage = error as any);
   }
 
+
   onSelect(offer: Offer) {
     this.router.navigate(['/offers', offer.id]);
+
   }
 
-  addOffer(){
+  addOffer() {
     this.router.navigate(['/offers/add']);
   }
 
