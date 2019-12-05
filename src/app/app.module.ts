@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {OwnersModule} from './owners/owners.module';
+import {OffersModule} from './offers/offers.module';
 import {PetsModule} from './pets/pets.module';
 import {VisitsModule} from './visits/visits.module';
 import {PetTypesModule} from './pettypes/pettypes.module';
@@ -35,27 +36,19 @@ import {PartsModule} from './parts/parts.module';
 import {SpecialtiesModule} from './specialties/specialties.module';
 import {HttpErrorHandler} from './error.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { OfertsComponent } from './oferts/oferts.component';
-import { OfertsAddComponent } from './oferts/oferts-add/oferts-add.component';
-import { OfertsDetailComponent } from './oferts/oferts-detail/oferts-detail.component';
-import { OfertsEditComponent } from './oferts/oferts-edit/oferts-edit.component';
-import { OfertsListComponent } from './oferts/oferts-list/oferts-list.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    OfertsComponent,
-    OfertsAddComponent,
-    OfertsDetailComponent,
-    OfertsEditComponent,
-    OfertsListComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     OwnersModule,
+    OffersModule,
     PetsModule,
     VisitsModule,
     PetTypesModule,
