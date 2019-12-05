@@ -15,12 +15,12 @@ export class OfferListComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.offerService.getOffers(),subscribe(
+    this.offerService.getOffers().subscribe(
       offers => this.offers = offers,
       error => this.errorMessage = error as any);
   }
 
-  onSelect(offers: Offer) {
+  onSelect(offer: Offer) {
     this.router.navigate(['/offers', offer.id]);
   }
 

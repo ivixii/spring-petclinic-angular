@@ -54,9 +54,9 @@ export class OfferDetailComponent implements OnInit {
     this.router.navigate(['/offers', this.offer.id, 'edit']);
   }
 
-  addPet(offer: Offer) {
-    this.router.navigate(['/offers', offer.id, 'pets', 'add']);
-  }
+  // addPet(offer: Offer) {
+  //   this.router.navigate(['/offers', offer.id, 'pets', 'add']);
+  // }
 
 
 }

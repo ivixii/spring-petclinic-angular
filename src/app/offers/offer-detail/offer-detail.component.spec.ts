@@ -36,7 +36,7 @@ import {Observable, of} from 'rxjs';
 
 class OwnserServiceStub {
   getOfferById(): Observable<Offer> {
-    return of( { id: 1, firstName: 'James' } as Offer );
+    return of( { id: 1, title: 'Offer1' } as Offer );
   }
 }
 

@@ -89,31 +89,31 @@ describe('OnwerService', () => {
 
   /// OfferService method tests begin ///
 
-  describe('#getOffers', () => {
-    let expectedOffers: Offer[];
+  // describe('#getOffers', () => {
+  //   let expectedOffers: Offer[];
 
-    beforeEach(() => {
-      offerService = TestBed.get(OfferService);
-      expectedOffers = [
-        { id: 1, firstName: 'A' },
-        { id: 2, firstName: 'B' },
-      ] as Offer[];
-    });
+  //   beforeEach(() => {
+  //     offerService = TestBed.get(OfferService);
+  //     expectedOffers = [
+  //       { id: 1, firstName: 'A' },
+  //       { id: 2, firstName: 'B' },
+  //     ] as Offer[];
+  //   });
 
-    it('should return expected offers (called once)', () => {
+  //   it('should return expected offers (called once)', () => {
 
-      offerService.getOffers().subscribe(
-        offers => expect(offers).toEqual(expectedOffers, 'should return expected offers'),
-        fail
-      );
+  //     offerService.getOffers().subscribe(
+  //       offers => expect(offers).toEqual(expectedOffers, 'should return expected offers'),
+  //       fail
+  //     );
 
-      // OfferService should have made one request to GET offers from expected URL
-      const req = httpTestingController.expectOne(offerService.entityUrl);
-      expect(req.request.method).toEqual('GET');
+  //     // OfferService should have made one request to GET offers from expected URL
+  //     const req = httpTestingController.expectOne(offerService.entityUrl);
+  //     expect(req.request.method).toEqual('GET');
 
-      // Respond with the mock offers
-      req.flush(expectedOffers);
-    });
-  });
+  //     // Respond with the mock offers
+  //     req.flush(expectedOffers);
+  //   });
+  // });
 
 });
