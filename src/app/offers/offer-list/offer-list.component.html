@@ -7,7 +7,7 @@
         <tr>
           <th>Titulo</th>
           <th>Detalle</th>
-          <th>Descuento</th>
+          <th>Descuento/th>
           <th>Fecha de Caducidad</th>
         </tr>
         </thead>
@@ -15,12 +15,14 @@
         <tbody>
         <tr *ngFor="let offer of offers">
           <td class="offerFullName"><a routerLink="/offers/{{offer.id}}" routerLinkActive="active"
-                                       (click)="onSelect(offer)">{{ offer.title }} {{ offer.description }}</a></td>
+                                       (click)="onSelect(offer)">{{ offer.title }}</a></td>
+          <td>{{ offer.description }}</td>
           <td>{{ offer.discount }}</td>
-          <td>{{ offer.discount }}</td>
-          <td>{{ offer.discount }}</td>
+          <td>{{ offer.expiredate }}</td>
           <td>
-        
+        <tr *ngFor="let pet of offer.pets">
+          {{ pet.name }}
+        </tr>
         </td>
         </tr>
         </tbody>
